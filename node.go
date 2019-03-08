@@ -9,8 +9,8 @@ type (
 		Children [17]node
 	}
 
+	// Leaf/extension nodes are determined by the prefixed nibble
 	shortNode struct {
-		// contains prefix and shared nibbles for both extension/
 		Key   string
 		Value node
 	}
@@ -25,4 +25,6 @@ func (n *fullNode) fstring(lvld int) string {
 	for lvl := 0; lvl <= lvld; lvl++ {
 		prefix = prefix + "\t"
 	}
+
+	fmt.Sprintf(`|-"%s"`)
 }
