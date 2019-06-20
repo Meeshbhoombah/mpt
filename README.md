@@ -38,7 +38,7 @@ Would result in:
             |-"9"
                 |-"7"
                     |-"bat"
-            |-"a"
+            |-"a"jj
             |-"b"
             |-"c"
             |-"d"
@@ -57,6 +57,16 @@ Would result in:
     |-"value"
 
 ```
+
+1. Create a Trie
+2. Insert a key 
+3. Get a value with the key
+4. Remove a value at key
+
+### Constraints
+- Strings only
+- No encodding
+- Ink
 
 ## References
 1. [Ethereum Wiki: Patricia Trie](https://github.com/ethereum/wiki/wiki/Patricia-Tree)
