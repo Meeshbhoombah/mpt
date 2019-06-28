@@ -49,3 +49,31 @@ mod tests {
         assert_eq!(contract.get(), true);
     }
 }
+
+/*
+ *
+ *#![no_std]
+
+// Import to interact with contract storage
+use ink_core::storage;
+// Import the `contract!` macro
+use ink_core::contract;
+
+// The code for your contract will live entirely in the `contract!` macro
+contract! {
+    struct ContractName {
+        my_bool: storage::Value<bool>,
+    }
+
+    impl Deploy for ContractName {
+        fn deploy(&mut self) {
+            // Deployment logic that runs once upon contract creation 
+        }
+    }
+
+    impl ContractName {
+        // Public/Private Function Definitions 
+    }
+}
+ *
+ */
