@@ -49,6 +49,7 @@ pub struct Node {
 
 impl Node {
     pub fn hash<H: EnvTypes>(&self, state: &mut H) {
+        
     }
 }
 
@@ -65,7 +66,7 @@ contract! {
         }
     }
 
-    impl Mpt { 
+    impl Mpt {
     }
 }
 
