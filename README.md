@@ -65,7 +65,8 @@ Would result in:
 
 ### Constraints
 - Strings only
-- No encodding
+- One Trie per smart contract
+- No encoding
 - Ink
 
 ## References

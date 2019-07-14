@@ -6,10 +6,10 @@ use parity_codec::{
 };
 use ink_core::{
     env::{
+        ContractEnv,
+        DefaultSrmlTypes,
         Env,
         EnvTypes,
-        Hash,
-        AccountId
     },
     memory::string::String,
     storage::{
@@ -48,12 +48,16 @@ pub struct Node {
 }
 
 impl Node {
-    pub fn hash<H: EnvTypes>(&self, state: &mut H) {
-        
+    pub fn hash(&mut self) {
+        let ;;
+
     }
 }
 
+
 contract! {
+    #![env = ink_core::env::DefaultSrmlTypes]
+
     struct Mpt {
         owner: storage::Value<AccountId>,
         root: storage::Value<Hash>,
@@ -73,10 +77,17 @@ contract! {
 #[cfg(all(test, feature = "test-env"))]
 mod tests {
     use super::Mpt;
-    use ink_core::env;
+    use ink_core::env::{
+        self,
+        ContractEnv,
+        DefaultSrmlTypes,
+    };
 
     #[test]
     fn it_deploys_owned() {
+        let alice = AccountId::from([0x0; 32]);
+        env::test::set_caller::ContractEnv::<DefaultSrmlTypes>(alice);
+
         // no events prior to deploy
         assert_eq!(env::test::emitted_events().count(), 0);
         let mut trie = Mpt::deploy_mock();
