@@ -49,8 +49,6 @@ pub struct Node {
 
 impl Node {
     pub fn hash(&mut self) {
-        let ;;
-
     }
 }
 
